@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-import emailjs from "emailjs-com";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,21 +8,34 @@ export const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
-        e.target,
-        import.meta.env.VITE_PUBLIC_KEY,
-      )
-      .then(() => {
-        alert("Mensagem Enviada!");
-        setFormData({ name: "", email: "", message: "" });
-      })
-      .catch(() => alert("Ops! Algo deu errado, por favor tente de novo."));
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    setSuccess("");
+
+    try {
+      const response = await fetch("http://localhost:8080/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao enviar e-mail");
+      }
+
+      setSuccess("Mensagem enviada com sucesso!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -34,9 +46,14 @@ export const Contact = () => {
       <RevealOnScroll>
         <div className="px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            {" "}
             Entrar em Contato
           </h2>
+
+          {success && (
+            <p className="text-green-500 text-center mb-4">{success}</p>
+          )}
+          {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="relative">
               <input
@@ -71,7 +88,7 @@ export const Contact = () => {
             <div className="relative">
               <textarea
                 id="message"
-                name="mensagem"
+                name="message"
                 required
                 rows={5}
                 value={formData.message}
@@ -86,8 +103,9 @@ export const Contact = () => {
             <button
               type="submit"
               className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+              disabled={loading}
             >
-              Enviar Mensagem
+              {loading ? "Enviando..." : "Enviar Mensagem"}
             </button>
           </form>
         </div>
