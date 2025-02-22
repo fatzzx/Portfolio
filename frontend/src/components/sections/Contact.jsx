@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const Contact = () => {
@@ -26,17 +26,36 @@ export const Contact = () => {
       });
 
       if (!response.ok) {
-        throw new Error("Erro ao enviar e-mail");
+        throw new Error(
+          "Erro ao enviar a mensagem. Tente novamente mais tarde.",
+        );
       }
 
-      setSuccess("Mensagem enviada com sucesso!");
+      setSuccess("✅ Mensagem enviada com sucesso!");
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {
-      setError(err.message);
+      if (err.message === "Failed to fetch") {
+        setError(
+          "⚠️ Houve um problema ao enviar a mensagem. Tente novamente mais tarde.",
+        );
+      } else {
+        setError(err.message);
+      }
     } finally {
       setLoading(false);
     }
   };
+
+  // Remove os alertas automaticamente após 5 segundos
+  useEffect(() => {
+    if (success || error) {
+      const timer = setTimeout(() => {
+        setSuccess("");
+        setError("");
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [success, error]);
 
   return (
     <section
@@ -49,10 +68,17 @@ export const Contact = () => {
             Entrar em Contato
           </h2>
 
+          {/* Alertas de sucesso e erro */}
           {success && (
-            <p className="text-green-500 text-center mb-4">{success}</p>
+            <div className="bg-green-500 text-white px-4 py-2 rounded-lg text-center mb-4 animate-fade-in">
+              {success}
+            </div>
           )}
-          {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+          {error && (
+            <div className="bg-red-500 text-white px-4 py-2 rounded-lg text-center mb-4 animate-fade-in">
+              {error}
+            </div>
+          )}
 
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="relative">
