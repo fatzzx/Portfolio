@@ -10,7 +10,7 @@ export const Home = () => {
         <div className="flex justify-center -mt-8">
           <div className="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-transparent bg-gradient-to-r from-blue-500 to-cyan-400 p-1 shadow-lg">
             <img
-              src="/src/assets/img/fotoperfil.jpeg"
+              src="https://github.com/fatzzx.png"
               alt="Felipe Farias"
               className="w-full h-full object-cover rounded-full"
             />
