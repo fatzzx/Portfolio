@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -46,7 +47,6 @@ export const Contact = () => {
     }
   };
 
-  // Remove os alertas automaticamente após 5 segundos
   useEffect(() => {
     if (success || error) {
       const timer = setTimeout(() => {
@@ -67,8 +67,6 @@ export const Contact = () => {
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
             Entrar em Contato
           </h2>
-
-          {/* Alertas de sucesso e erro */}
           {success && (
             <div className="bg-green-500 text-white px-4 py-2 rounded-lg text-center mb-4 animate-fade-in">
               {success}
@@ -134,6 +132,25 @@ export const Contact = () => {
               {loading ? "Enviando..." : "Enviar Mensagem"}
             </button>
           </form>
+
+          <div className="flex justify-center space-x-6 mt-6">
+            <a
+              href="https://www.linkedin.com/in/felipe-farias-929356240"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-blue-500 transition-colors"
+            >
+              <FaLinkedin size={30} />
+            </a>
+            <a
+              href="https://github.com/fatzzx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-blue-500 transition-colors"
+            >
+              <FaGithub size={30} />
+            </a>
+          </div>
         </div>
       </RevealOnScroll>
     </section>

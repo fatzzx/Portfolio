@@ -16,18 +16,17 @@ export const About = () => {
           </h2>
 
           <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-300 mb-6 text-center">
               💻 Felipe Spinola Farias – Desenvolvedor e estudante de Engenharia
-              da Computação no SENAI CIMATEC. Atualmente, trabalho na ACP Group,
-              onde atuo no desenvolvimento de sistemas utilizando C#, .NET, SQL
-              Server e arquitetura de software. Tenho experiência com
-              Arquitetura Limpa, DDD e Padrão Repositório, aplicando esses
-              conceitos para garantir organização e escalabilidade do código.
-              Além disso, realizo uma Iniciação Científica em Computação
-              Quântica e, no meu tempo livre, aprofundo meus estudos em Deep
-              Learning. Apaixonado por programação, já atuei como monitor de
-              Algoritmos e Estruturas de Dados e sigo constantemente expandindo
-              meu conhecimento em tecnologia.
+              da Computação no SENAI CIMATEC. Já atuei no desenvolvimento de
+              sistemas utilizando C#, .NET, SQL Server e arquitetura de
+              software. Tenho experiência com Arquitetura Limpa, DDD e Padrão
+              Repositório, aplicando esses conceitos para garantir organização e
+              escalabilidade do código. Além disso, realizo uma Iniciação
+              Científica em Computação Quântica e, no meu tempo livre, aprofundo
+              meus estudos em Deep Learning. Apaixonado por programação, já
+              atuei como monitor de Algoritmos e Estruturas de Dados e sigo
+              constantemente expandindo meu conhecimento em tecnologia.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -79,10 +78,10 @@ export const About = () => {
               <div className="space-y-4 text-gray-300">
                 <div>
                   <h4 className="font-semibold">
-                    Desenvolvedor Júnior na ACP GROUP (2024 - Presente)
+                    Desenvolvedor Júnior na ACP GROUP (2024 - 2025)
                   </h4>
                   <p>
-                    Atuo com C#, .NET Framework, .NET Core, Microsoft SQL
+                    Atuei com C#, .NET Framework, .NET Core, Microsoft SQL
                     Server, Internet Information Services (IIS) e padrões
                     arquiteturais como microsserviços e monolítico.
                   </p>
