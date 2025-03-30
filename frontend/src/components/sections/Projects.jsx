@@ -3,18 +3,23 @@ import { RevealOnScroll } from "../RevealOnScroll";
 const projects = [
   {
     title: "TicketGen",
-    description: "Gerador de tickets para desafio FrontendMentor ",
+    description: "Desafio do frontend mentor para geracao de ticket",
     link: "https://github.com/fatzzx/TicketGen",
+    image:
+      "https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/rhljtp9tnxa7rspyoba7.jpg",
   },
   {
     title: "Calculadora de Idade",
-    description: "Descubra sua idade completa! ",
+    description: "Desafio do frontend mentor para descobrir a sua idade exata",
     link: "https://github.com/fatzzx/calculadora-idade",
+    image:
+      "https://res.cloudinary.com/dz209s6jk/image/upload/v1680193823/Challenges/edhwnh0nvy7vyhejeccf.jpg",
   },
   {
     title: "Consulta Nutricional",
-    description: "Dados Nutri! ",
+    description: "Projeto em desenvolvimento para consulta nutricional",
     link: "https://github.com/fatzzx/CONSULTA-NUTRICIONAL",
+    image: "https://opengraph.githubassets.com/1/fatzzx/CONSULTA-NUTRICIONAL",
   },
 ];
 
@@ -32,6 +37,11 @@ export const Projects = () => {
                 key={index}
                 className="relative bg-gradient-to-b from-gray-900 to-gray-800 p-6 rounded-2xl shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300"
               >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-40 object-cover rounded-lg mb-4"
+                />
                 <h3 className="text-2xl font-semibold text-gray-200 mb-4">
                   {project.title}
                 </h3>
