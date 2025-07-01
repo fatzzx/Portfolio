@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export const Contact = () => {
+  const { t, language } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     message: "",
   });
 
@@ -20,28 +21,49 @@ export const Contact = () => {
     setSuccess("");
 
     try {
-      const response = await fetch("http://localhost:8080/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const myEmail = "felipespinolafarias@gmail.com";
 
-      if (!response.ok) {
-        throw new Error(
-          "Erro ao enviar a mensagem. Tente novamente mais tarde.",
-        );
+      const subject =
+        language === "pt"
+          ? `Contato do Portfólio - ${formData.name}`
+          : `Portfolio Contact - ${formData.name}`;
+
+      const body =
+        language === "pt"
+          ? `Olá Felipe!
+
+Meu nome é ${formData.name} e gostaria de entrar em contato com você.
+
+${formData.message}
+
+---
+Enviado através do seu portfólio`
+          : `Hello Felipe!
+
+My name is ${formData.name} and I would like to get in touch with you.
+
+${formData.message}
+
+---
+Sent through your portfolio`;
+
+      const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${myEmail}&su=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+
+      const newWindow = window.open(gmailWebUrl, "_blank");
+
+      if (!newWindow) {
+        const mailtoLink = `mailto:${myEmail}?subject=${encodeURIComponent(
+          subject
+        )}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailtoLink;
       }
 
-      setSuccess("✅ Mensagem enviada com sucesso!");
-      setFormData({ name: "", email: "", message: "" });
+      setSuccess(t("contact.successMessage"));
+      setFormData({ name: "", message: "" });
     } catch (err) {
-      if (err.message === "Failed to fetch") {
-        setError(
-          "⚠️ Houve um problema ao enviar a mensagem. Tente novamente mais tarde.",
-        );
-      } else {
-        setError(err.message);
-      }
+      setError(t("contact.errorMessage"));
     } finally {
       setLoading(false);
     }
@@ -65,7 +87,7 @@ export const Contact = () => {
       <RevealOnScroll>
         <div className="px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            Entrar em Contato
+            {t("contact.title")}
           </h2>
           {success && (
             <div className="bg-green-500 text-white px-4 py-2 rounded-lg text-center mb-4 animate-fade-in">
@@ -87,24 +109,9 @@ export const Contact = () => {
                 required
                 value={formData.name}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                placeholder="Nome..."
+                placeholder={t("contact.namePlaceholder")}
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
-                }
-              />
-            </div>
-
-            <div className="relative">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                value={formData.email}
-                className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                placeholder="exemplo@gmail.com"
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
                 }
               />
             </div>
@@ -117,7 +124,7 @@ export const Contact = () => {
                 rows={5}
                 value={formData.message}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                placeholder="Sua Mensagem..."
+                placeholder={t("contact.messagePlaceholder")}
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
@@ -129,7 +136,7 @@ export const Contact = () => {
               className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
               disabled={loading}
             >
-              {loading ? "Enviando..." : "Enviar Mensagem"}
+              {loading ? t("contact.sending") : t("contact.sendButton")}
             </button>
           </form>
 

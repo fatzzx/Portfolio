@@ -8,13 +8,14 @@ import "./index.css";
 import { useState } from "react";
 import { About } from "./components/sections/About";
 import { Projects } from "./components/sections/Projects";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <>
+    <LanguageProvider>
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}
       <div
         className={`min-h-screen transition-opacity duration-700 ${
@@ -28,7 +29,7 @@ function App() {
         <Projects />
         <Contact />
       </div>
-    </>
+    </LanguageProvider>
   );
 }
 
