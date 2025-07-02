@@ -20,6 +20,7 @@ export const translations = {
       backend: "Backend",
       education: "🏫 Formação",
       experience: "💼 Experiência Profissional",
+      downloadCV: "Baixar Currículo",
       educationItems: [
         "<strong>Engenharia da Computação</strong> - SENAI CIMATEC (2022-2027)",
         "Colégio Antônio Vieira - Ensino Médio (2019-2021)",
@@ -86,6 +87,7 @@ export const translations = {
       backend: "Backend",
       education: "🏫 Education",
       experience: "💼 Professional Experience",
+      downloadCV: "Download Resume",
       educationItems: [
         "<strong>Computer Engineering</strong> - SENAI CIMATEC (2022-2027)",
         "Colégio Antônio Vieira - High School (2019-2021)",

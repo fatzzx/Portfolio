@@ -4,11 +4,13 @@ import { useTranslation } from "../../hooks/useTranslation";
 const projectsData = [
   {
     link: "https://quantum.felipefarias.tech/",
-    image: "https://opengraph.githubassets.com/1/fatzzx/BB84-simulator",
+    emoji: "⚛️",
+    color: "from-blue-500 to-cyan-400",
   },
   {
     link: "https://play-worth.vercel.app/",
-    image: "https://opengraph.githubassets.com/1/fatzzx/CONSULTA-DE-JOGOS",
+    emoji: "🎮",
+    color: "from-purple-500 to-pink-400",
   },
 ];
 
@@ -27,13 +29,20 @@ export const Projects = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="relative bg-gradient-to-b from-gray-900 to-gray-800 p-6 rounded-2xl shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300"
+                className="relative bg-gradient-to-b from-gray-900 to-gray-800 p-6 rounded-2xl shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
-                <img
-                  src={projectsData[index].image}
-                  alt={project.title}
-                  className="w-full h-40 object-cover rounded-lg mb-4"
-                />
+                <div
+                  className={`w-full h-40 rounded-lg mb-4 bg-gradient-to-r ${
+                    projectsData[index]?.color || "from-blue-500 to-cyan-400"
+                  } flex items-center justify-center`}
+                >
+                  <div className="text-white text-center">
+                    <div className="text-6xl mb-2">
+                      {projectsData[index]?.emoji || "💻"}
+                    </div>
+                    <div className="text-lg font-semibold">{project.title}</div>
+                  </div>
+                </div>
                 <h3 className="text-2xl font-semibold text-gray-200 mb-4">
                   {project.title}
                 </h3>
