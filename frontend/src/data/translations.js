@@ -1,5 +1,12 @@
 export const translations = {
   pt: {
+    languages: {
+      title: "🌍 Competência Linguística",
+      inProgress: "Em estudo",
+      c1: "Nível avançado – comunicação fluente em contextos profissionais e técnicos.",
+      a2: "Nível básico-intermediário – atualmente em estudo, com foco em evolução contínua e uso profissional futuro.",
+    },
+
     navbar: {
       home: "Página Inicial",
       about: "Sobre Mim",
@@ -15,7 +22,7 @@ export const translations = {
     about: {
       title: "Sobre Mim",
       description:
-        "💻 Felipe Spinola Farias – Desenvolvedor e estudante de Engenharia da Computação no SENAI CIMATEC. Já atuei no desenvolvimento de sistemas utilizando C#, .NET, SQL Server e arquitetura de software. Tenho experiência com Arquitetura Limpa, DDD e Padrão Repositório, aplicando esses conceitos para garantir organização e escalabilidade do código. Além disso, realizo uma Iniciação Científica em Computação Quântica e, no meu tempo livre, aprofundo meus estudos em Deep Learning. Apaixonado por programação, já atuei como monitor de Algoritmos e Estruturas de Dados e sigo constantemente expandindo meu conhecimento em tecnologia.",
+        "💻 Felipe Spinola Farias – Desenvolvedor e estudante de Engenharia da Computação no SENAI CIMATEC. Atuo no desenvolvimento de sistemas de gestão e aplicações web utilizando tecnologias modernas como TypeScript, NestJS, Express e React. Possuo experiência com backend, arquitetura de software e boas práticas de desenvolvimento, além de atuar com soluções de observabilidade e monitoramento utilizando ferramentas como Zabbix e Grafana. Também tenho vivência com C#, .NET e SQL Server, o que me proporciona uma base sólida em diferentes ecossistemas. Atualmente realizo Iniciação Científica na área de Computação Quântica e sigo constantemente aprofundando meus estudos em tecnologias emergentes e sistemas escaláveis.",
       frontend: "Frontend",
       backend: "Backend",
       education: "🏫 Formação",
@@ -27,7 +34,13 @@ export const translations = {
       ],
       experienceItems: [
         {
-          title: "Desenvolvedor Júnior na ACP GROUP (2024 - 2025)",
+          title:
+            "Desenvolvedor – TLD Hub de Cibersegurança e Conectividade (2025 - Atual)",
+          description:
+            "Atuação no desenvolvimento de sistemas de gestão internos utilizando TypeScript, Express, NestJS e React. Desenvolvimento de soluções voltadas à observabilidade e monitoramento de sistemas, com uso de ferramentas como Zabbix e Grafana.",
+        },
+        {
+          title: "Desenvolvedor na ACP GROUP (2024 - 2025)",
           description:
             "Atuei com C#, .NET Framework, .NET Core, Microsoft SQL Server, Internet Information Services (IIS) e padrões arquiteturais como microsserviços e monolítico.",
         },
@@ -66,7 +79,15 @@ export const translations = {
       errorMessage: "Houve um problema ao abrir o Gmail. Tente novamente.",
     },
   },
+
   en: {
+    languages: {
+      title: "🌍 Language Proficiency",
+      inProgress: "In progress",
+      c1: "Advanced level – fluent communication in professional and technical contexts.",
+      a2: "Elementary to pre-intermediate level – currently studying, with focus on continuous improvement and future professional use.",
+    },
+
     navbar: {
       home: "Home",
       about: "About Me",
@@ -82,7 +103,7 @@ export const translations = {
     about: {
       title: "About Me",
       description:
-        "💻 Felipe Spinola Farias – Developer and Computer Engineering student at SENAI CIMATEC. I've worked on systems development using C#, .NET, SQL Server, and software architecture. I have experience with Clean Architecture, DDD, and Repository Pattern, applying these concepts to ensure code organization and scalability. Additionally, I conduct Scientific Research in Quantum Computing and, in my free time, I deepen my studies in Deep Learning. Passionate about programming, I've served as a monitor for Algorithms and Data Structures and continuously expand my knowledge in technology.",
+        "💻 Felipe Spinola Farias – Developer and Computer Engineering student at SENAI CIMATEC. I work on the development of management systems and web applications using modern technologies such as TypeScript, NestJS, Express, and React. I have experience in backend development, software architecture, and best development practices, as well as working with observability and monitoring solutions using tools like Zabbix and Grafana. I also have experience with C#, .NET, and SQL Server, providing a solid foundation across different ecosystems. Currently, I conduct Scientific Research in Quantum Computing and continuously deepen my studies in scalable systems and emerging technologies.",
       frontend: "Frontend",
       backend: "Backend",
       education: "🏫 Education",
@@ -94,14 +115,20 @@ export const translations = {
       ],
       experienceItems: [
         {
-          title: "Junior Developer at ACP GROUP (2024 - 2025)",
+          title:
+            "Developer – TLD Cybersecurity and Connectivity Hub (2025 - Present)",
           description:
-            "Worked with C#, .NET Framework, .NET Core, Microsoft SQL Server, Internet Information Services (IIS) and architectural patterns like microservices and monolithic.",
+            "Worked on internal management systems using TypeScript, Express, NestJS, and React. Developed observability and system monitoring solutions using tools such as Zabbix and Grafana.",
+        },
+        {
+          title: "Developer at ACP GROUP (2024 - 2025)",
+          description:
+            "Worked with C#, .NET Framework, .NET Core, Microsoft SQL Server, Internet Information Services (IIS) and architectural patterns such as microservices and monolithic systems.",
         },
         {
           title: "Volunteer Scientific Research Scholar (2024 - Present)",
           description:
-            "Theoretical studies and tests in quantum communication for secure information transmission.",
+            "Conducted theoretical studies and experiments in quantum communication for secure information transmission.",
         },
       ],
     },
