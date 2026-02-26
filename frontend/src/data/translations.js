@@ -13,52 +13,60 @@ export const translations = {
       projects: "Projetos",
       contact: "Contato",
     },
+
     home: {
       greeting: "Olá, me chamo Felipe Farias!",
       description:
-        "👋 Olá! Sou Felipe Spinola Farias, estudante de Engenharia da Computação e profissional na área de desenvolvimento de sistemas. Sou apaixonado por tecnologia e sempre busco novos desafios para aprender e crescer.",
+        "👋 Olá! Sou Felipe Spinola Farias, profissional da área de desenvolvimento de sistemas, com atuação no desenvolvimento e manutenção de aplicações e sistemas internos.",
       contactButton: "Entrar em Contato",
     },
+
     about: {
       title: "Sobre Mim",
       description:
-        "💻 Felipe Spinola Farias – Desenvolvedor e estudante de Engenharia da Computação no SENAI CIMATEC. Atuo no desenvolvimento de sistemas de gestão e aplicações web utilizando tecnologias modernas como TypeScript, NestJS, Express e React. Possuo experiência com backend, arquitetura de software e boas práticas de desenvolvimento, além de atuar com soluções de observabilidade e monitoramento utilizando ferramentas como Zabbix e Grafana. Também tenho vivência com C#, .NET e SQL Server, o que me proporciona uma base sólida em diferentes ecossistemas. Atualmente realizo Iniciação Científica na área de Computação Quântica e sigo constantemente aprofundando meus estudos em tecnologias emergentes e sistemas escaláveis.",
+        "Sou desenvolvedor de software com experiência em sistemas internos e aplicações web. Atuo principalmente com backend, utilizando TypeScript, NestJS, Express e React, além de trabalhar com C#, .NET e SQL Server. Já participei do desenvolvimento e manutenção de sistemas corporativos, sempre com foco em organização de código, estabilidade e soluções práticas. Possuo experiência em monitoramento e observabilidade com Zabbix e Grafana. Atualmente, estou em processo de estudo e aprofundamento em Machine Learning.",
+
       frontend: "Frontend",
       backend: "Backend",
+
       education: "🏫 Formação",
       experience: "💼 Experiência Profissional",
       downloadCV: "Baixar Currículo",
+
       educationItems: [
-        "<strong>Engenharia da Computação</strong> - SENAI CIMATEC (2022-2027)",
-        "Colégio Antônio Vieira - Ensino Médio (2019-2021)",
+        "<strong>Engenharia da Computação</strong> - SENAI CIMATEC",
+        "Colégio Antônio Vieira - Ensino Médio",
       ],
+
       experienceItems: [
         {
           title:
             "Desenvolvedor – TLD Hub de Cibersegurança e Conectividade (2025 - Atual)",
           description:
-            "Atuação no desenvolvimento de sistemas de gestão internos utilizando TypeScript, Express, NestJS e React. Desenvolvimento de soluções voltadas à observabilidade e monitoramento de sistemas, com uso de ferramentas como Zabbix e Grafana.",
-        },
-        {
-          title: "Desenvolvedor na ACP GROUP (2024 - 2025)",
-          description:
-            "Atuei com C#, .NET Framework, .NET Core, Microsoft SQL Server, Internet Information Services (IIS) e padrões arquiteturais como microsserviços e monolítico.",
+            "Atuação no desenvolvimento de sistemas internos utilizando TypeScript, Express, NestJS e React, além da implementação de soluções de monitoramento e observabilidade com Zabbix e Grafana.",
         },
         {
           title:
-            "Bolsista Voluntário de Iniciação Científica (2024 - Presente)",
+            "Desenvolvedor – ACP GROUP / Procuradoria Geral do Estado da Bahia (2024 - 2025)",
           description:
-            "Estudos teóricos e testes na área de comunicação quântica para transmissão segura de informações.",
+            "Atuei como desenvolvedor terceirizado na Procuradoria Geral do Estado da Bahia (PGE), participando do desenvolvimento e manutenção de sistemas internos. Trabalhei com C#, .NET Framework, .NET Core, Microsoft SQL Server, Internet Information Services (IIS) e aplicação de padrões arquiteturais como sistemas monolíticos e microsserviços.",
+        },
+        {
+          title:
+            "Pesquisa Aplicada em Computação Quântica – SENAI CIMATEC (2024 - 2025)",
+          description:
+            "Realizei estudos teóricos e experimentos em comunicação quântica no SENAI CIMATEC, com foco no protocolo BB84 para distribuição quântica de chaves (QKD) e transmissão segura de informações.",
         },
       ],
     },
+
     projects: {
       title: "Meus Projetos",
       items: [
         {
           title: "BB84 Simulator",
           description:
-            "Simulador do protocolo BB84 para criptografia quântica e transmissão segura de chaves",
+            "Simulador do protocolo BB84 para criptografia quântica e distribuição segura de chaves",
         },
         {
           title: "Consulta de Jogos",
@@ -68,6 +76,7 @@ export const translations = {
       ],
       viewProject: "Ver Projeto →",
     },
+
     contact: {
       title: "Entrar em Contato",
       namePlaceholder: "Seu nome...",
@@ -94,51 +103,60 @@ export const translations = {
       projects: "Projects",
       contact: "Contact",
     },
+
     home: {
       greeting: "Hello, I'm Felipe Farias!",
       description:
-        "👋 Hello! I'm Felipe Spinola Farias, Computer Engineering student and professional in the systems development field. I'm passionate about technology and always seek new challenges to learn and grow.",
+        "👋 Hello! I'm Felipe Spinola Farias, a technology professional working with systems development and internal applications.",
       contactButton: "Get in Touch",
     },
+
     about: {
       title: "About Me",
       description:
-        "💻 Felipe Spinola Farias – Developer and Computer Engineering student at SENAI CIMATEC. I work on the development of management systems and web applications using modern technologies such as TypeScript, NestJS, Express, and React. I have experience in backend development, software architecture, and best development practices, as well as working with observability and monitoring solutions using tools like Zabbix and Grafana. I also have experience with C#, .NET, and SQL Server, providing a solid foundation across different ecosystems. Currently, I conduct Scientific Research in Quantum Computing and continuously deepen my studies in scalable systems and emerging technologies.",
+        "I'm a software developer with experience in internal systems and web applications, primarily focused on backend development using TypeScript, NestJS, Express, and React, with additional experience in C#, .NET, and SQL Server. I've contributed to the development and maintenance of corporate systems with an emphasis on clean code, stability, and practical solutions. I also have experience in system monitoring and observability using Zabbix and Grafana. Between 2024 and 2025, I worked on applied research in quantum computing at SENAI CIMATEC, focusing on the BB84 protocol for Quantum Key Distribution (QKD). Currently, I am studying and deepening my knowledge in Machine Learning.",
+
       frontend: "Frontend",
       backend: "Backend",
+
       education: "🏫 Education",
       experience: "💼 Professional Experience",
       downloadCV: "Download Resume",
+
       educationItems: [
-        "<strong>Computer Engineering</strong> - SENAI CIMATEC (2022-2027)",
-        "Colégio Antônio Vieira - High School (2019-2021)",
+        "<strong>Computer Engineering</strong> - SENAI CIMATEC",
+        "Colégio Antônio Vieira - High School",
       ],
+
       experienceItems: [
         {
           title:
-            "Developer – TLD Cybersecurity and Connectivity Hub (2025 - Present)",
+            "Software Developer – TLD Cybersecurity and Connectivity Hub (2025 - Present)",
           description:
-            "Worked on internal management systems using TypeScript, Express, NestJS, and React. Developed observability and system monitoring solutions using tools such as Zabbix and Grafana.",
+            "Worked on internal systems using TypeScript, Express, NestJS, and React, as well as implementing monitoring and observability solutions with Zabbix and Grafana.",
         },
         {
-          title: "Developer at ACP GROUP (2024 - 2025)",
+          title:
+            "Software Developer – ACP GROUP / Office of the State Attorney General of Bahia (2024 - 2025)",
           description:
-            "Worked with C#, .NET Framework, .NET Core, Microsoft SQL Server, Internet Information Services (IIS) and architectural patterns such as microservices and monolithic systems.",
+            "Worked as an outsourced software developer at the Office of the State Attorney General of Bahia (PGE), contributing to the development and maintenance of internal systems. Experience with C#, .NET Framework, .NET Core, Microsoft SQL Server, Internet Information Services (IIS), and architectural patterns such as monolithic systems and microservices.",
         },
         {
-          title: "Volunteer Scientific Research Scholar (2024 - Present)",
+          title:
+            "Applied Research in Quantum Computing – SENAI CIMATEC (2024 - 2025)",
           description:
-            "Conducted theoretical studies and experiments in quantum communication for secure information transmission.",
+            "Conducted theoretical studies and experiments in quantum communication at SENAI CIMATEC, with a focus on the BB84 protocol for Quantum Key Distribution (QKD) and secure information transmission.",
         },
       ],
     },
+
     projects: {
       title: "My Projects",
       items: [
         {
           title: "BB84 Simulator",
           description:
-            "BB84 protocol simulator for quantum cryptography and secure key transmission",
+            "BB84 protocol simulator for quantum cryptography and secure key distribution",
         },
         {
           title: "Games Consultation",
@@ -148,6 +166,7 @@ export const translations = {
       ],
       viewProject: "View Project →",
     },
+
     contact: {
       title: "Get in Touch",
       namePlaceholder: "Your name...",
