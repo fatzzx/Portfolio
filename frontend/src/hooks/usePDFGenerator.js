@@ -21,8 +21,8 @@ export const usePDFGenerator = () => {
     doc.setTextColor(...lightTextColor);
     const subtitle =
       language === "pt"
-        ? "Desenvolvedor | Estudante de Engenharia da Computação"
-        : "Developer | Computer Engineering Student";
+        ? "Desenvolvedor"
+        : "Developer";
     doc.text(subtitle, 20, yPosition);
 
     yPosition += 15;
