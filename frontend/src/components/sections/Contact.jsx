@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
 import { useTranslation } from "../../hooks/useTranslation";
 
 export const Contact = () => {
@@ -140,23 +140,37 @@ Sent through your portfolio`;
             </button>
           </form>
 
-          <div className="flex justify-center space-x-6 mt-6">
-            <a
-              href="https://www.linkedin.com/in/felipe-farias-929356240"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-blue-500 transition-colors"
-            >
-              <FaLinkedin size={30} />
-            </a>
-            <a
-              href="https://github.com/fatzzx"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-blue-500 transition-colors"
-            >
-              <FaGithub size={30} />
-            </a>
+          <div className="flex flex-col items-center mt-6 space-y-4">
+            <div className="flex justify-center space-x-6">
+              <a
+                href="https://www.linkedin.com/in/felipe-farias-929356240"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-blue-500 transition-colors"
+              >
+                <FaLinkedin size={30} />
+              </a>
+              <a
+                href="https://github.com/fatzzx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-blue-500 transition-colors"
+              >
+                <FaGithub size={30} />
+              </a>
+              <a
+                href="https://wa.me/5571999879701"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-blue-500 transition-colors"
+                title="WhatsApp"
+              >
+                <FaWhatsapp size={30} />
+              </a>
+            </div>
+            <div className="text-gray-400 text-sm flex items-center space-x-2">
+              <span>+55 (71) 9 9987-9701</span>
+            </div>
           </div>
         </div>
       </RevealOnScroll>

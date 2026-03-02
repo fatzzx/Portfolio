@@ -37,6 +37,8 @@ export const usePDFGenerator = () => {
     );
     yPosition += 5;
     doc.text("GitHub: github.com/fatzzx", 20, yPosition);
+    yPosition += 5;
+    doc.text("Phone: +55 (71) 9 9987-9701", 20, yPosition);
 
     yPosition += 10;
     doc.setDrawColor(...primaryColor);
@@ -158,11 +160,6 @@ export const usePDFGenerator = () => {
     const pageHeight = doc.internal.pageSize.height;
     doc.setFontSize(8);
     doc.setTextColor(...lightTextColor);
-    const footerText =
-      language === "pt"
-        ? "Currículo gerado automaticamente pelo portfólio online"
-        : "Resume automatically generated from online portfolio";
-    doc.text(footerText, 20, pageHeight - 10);
 
     const fileName =
       language === "pt"
