@@ -84,7 +84,7 @@ export const usePDFGenerator = () => {
     yPosition += 6;
     doc.setFontSize(10);
     doc.text(
-      "• TypeScript, Node.js, Express, NestJS, Python, .NET, SQL",
+      "• TypeScript, Node.js, Express, NestJS, Python, .NET, SQL, Java",
       25,
       yPosition,
     );

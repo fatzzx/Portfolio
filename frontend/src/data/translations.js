@@ -24,7 +24,7 @@ export const translations = {
     about: {
       title: "Sobre Mim",
       description:
-        "Sou desenvolvedor de software com experiência em sistemas internos e aplicações web. Atuo principalmente com backend, utilizando TypeScript, NestJS, Express e React, além de trabalhar com C#, .NET e SQL Server. Já participei do desenvolvimento e manutenção de sistemas corporativos, sempre com foco em organização de código, estabilidade e soluções práticas. Possuo experiência em monitoramento e observabilidade com Zabbix e Grafana. Atualmente, estou em processo de estudo e aprofundamento em Machine Learning.",
+        "Sou desenvolvedor de software com experiência em sistemas internos e aplicações web. Atuo principalmente com backend, utilizando TypeScript, NestJS, Express e React, além de trabalhar com Java, C#, .NET e SQL Server. Já participei do desenvolvimento e manutenção de sistemas corporativos, sempre com foco em organização de código, estabilidade e soluções práticas. Possuo experiência em monitoramento e observabilidade com Zabbix e Grafana. Atualmente, estou em processo de estudo e aprofundamento em Machine Learning.",
 
       frontend: "Frontend",
       backend: "Backend",
@@ -47,16 +47,17 @@ export const translations = {
         },
         {
           title:
-            "Desenvolvedor – ACP GROUP / Procuradoria Geral do Estado da Bahia (2024 - 2025)",
+            "Desenvolvedor Backend – ACP GROUP / PGE-BA (2024 - 2025 • Contrato Temporário)",
           description:
-            "Atuei como desenvolvedor terceirizado na Procuradoria Geral do Estado da Bahia (PGE), participando do desenvolvimento e manutenção de sistemas internos. Trabalhei com C#, .NET Framework, .NET Core, Microsoft SQL Server, Internet Information Services (IIS) e aplicação de padrões arquiteturais como sistemas monolíticos e microsserviços.",
+            "Desenvolvimento e manutenção de sistemas internos com C#, .NET, SQL Server e IIS. Atuei também na manutenção de sistemas legados em Java (Spring Boot/JSP), realizando integrações essenciais com outros órgãos públicos.",
         },
         {
           title:
-            "Pesquisa Aplicada em Computação Quântica – SENAI CIMATEC (2024 - 2025)",
+            "Pesquisa Aplicada em Computação Quântica – SENAI CIMATEC",
           description:
             "Realizei estudos teóricos e experimentos em comunicação quântica no SENAI CIMATEC, com foco no protocolo BB84 para distribuição quântica de chaves (QKD) e transmissão segura de informações.",
         },
+
       ],
     },
 
@@ -114,7 +115,7 @@ export const translations = {
     about: {
       title: "About Me",
       description:
-        "I'm a software developer with experience in internal systems and web applications, primarily focused on backend development using TypeScript, NestJS, Express, and React, with additional experience in C#, .NET, and SQL Server. I've contributed to the development and maintenance of corporate systems with an emphasis on clean code, stability, and practical solutions. I also have experience in system monitoring and observability using Zabbix and Grafana. Between 2024 and 2025, I worked on applied research in quantum computing at SENAI CIMATEC, focusing on the BB84 protocol for Quantum Key Distribution (QKD). Currently, I am studying and deepening my knowledge in Machine Learning.",
+        "I'm a software developer with experience in internal systems and web applications, primarily focused on backend development using TypeScript, NestJS, Express, and React, with additional experience in Java, C#, .NET, and SQL Server. I've contributed to the development and maintenance of corporate systems with an emphasis on clean code, stability, and practical solutions. I also have experience in system monitoring and observability using Zabbix and Grafana. Between 2024 and 2025, I worked on applied research in quantum computing at SENAI CIMATEC, focusing on the BB84 protocol for Quantum Key Distribution (QKD). Currently, I am studying and deepening my knowledge in Machine Learning.",
 
       frontend: "Frontend",
       backend: "Backend",
@@ -137,16 +138,17 @@ export const translations = {
         },
         {
           title:
-            "Software Developer – ACP GROUP / Office of the State Attorney General of Bahia (2024 - 2025)",
+            "Backend Developer – ACP GROUP / PGE-BA (2024 - 2025 • Temporary Contract)",
           description:
-            "Worked as an outsourced software developer at the Office of the State Attorney General of Bahia (PGE), contributing to the development and maintenance of internal systems. Experience with C#, .NET Framework, .NET Core, Microsoft SQL Server, Internet Information Services (IIS), and architectural patterns such as monolithic systems and microservices.",
+            "Development and maintenance of internal systems using C#, .NET, SQL Server, and IIS. Also worked on the maintenance of legacy Java (Spring Boot/JSP) systems, developing essential integrations with other public agencies.",
         },
         {
           title:
-            "Applied Research in Quantum Computing – SENAI CIMATEC (2024 - 2025)",
+            "Applied Research in Quantum Computing – SENAI CIMATEC",
           description:
             "Conducted theoretical studies and experiments in quantum communication at SENAI CIMATEC, with a focus on the BB84 protocol for Quantum Key Distribution (QKD) and secure information transmission.",
         },
+
       ],
     },
 
