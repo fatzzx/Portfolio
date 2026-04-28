@@ -14,7 +14,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between items-center h-14">
           <a href="#home" className="font-['JetBrains_Mono',monospace] text-sm font-medium text-[#5D4432] tracking-tight">
-            felipefarias<span className="opacity-50">.tech</span>
+            Felipe Farias
           </a>
 
           <div
@@ -30,6 +30,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             {[
               { href: "#home", label: t("navbar.home") },
               { href: "#about", label: t("navbar.about") },
+              { href: "#certifications", label: t("navbar.certifications") },
               { href: "#contact", label: t("navbar.contact") },
             ].map(({ href, label }) => (
               <a

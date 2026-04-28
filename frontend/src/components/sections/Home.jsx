@@ -29,9 +29,6 @@ export const Home = () => {
 
             {/* Text content */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
-              <p className="text-sm font-medium text-[#5D4432] tracking-widest uppercase mb-3">
-                {t("home.greeting").split(" ")[0]}
-              </p>
               <h1 className="text-5xl md:text-6xl font-bold text-[#3E2B1E] leading-tight mb-4">
                 Felipe<br />Farias
               </h1>

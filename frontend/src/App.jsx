@@ -8,6 +8,7 @@ import { useState } from "react";
 import { About } from "./components/sections/About";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { Languages } from "./components/sections/Languages";
+import { Certifications } from "./components/sections/Certifications";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,6 +21,7 @@ function App() {
         <Home />
         <About />
         <Languages />
+        <Certifications />
         <Contact />
       </div>
     </LanguageProvider>

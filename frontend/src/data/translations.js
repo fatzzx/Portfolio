@@ -13,6 +13,7 @@ export const translations = {
       home: "Página Inicial",
       about: "Sobre Mim",
       projects: "Projetos",
+      certifications: "Certificações",
       contact: "Contato",
     },
 
@@ -79,6 +80,34 @@ export const translations = {
       viewProject: "Ver Projeto →",
     },
 
+    certifications: {
+      title: "Certificações",
+      subtitle: "Cursos e certificações concluídos na Coursera",
+      verify: "Verificar",
+      courses: "Cursos incluídos",
+      items: [
+        {
+          name: "Mathematics for Machine Learning and Data Science",
+          issuer: "DeepLearning.AI (Coursera)",
+          link: "https://www.coursera.org/account/accomplishments/specialization/JJR2FN1GZ7F0",
+          courses: [
+            {
+              name: "Linear Algebra for Machine Learning and Data Science",
+              link: "https://www.coursera.org/account/accomplishments/verify/HJOK50N5TN4Z",
+            },
+            {
+              name: "Calculus for Machine Learning and Data Science",
+              link: "https://www.coursera.org/account/accomplishments/verify/QKOEFC8WRWT9",
+            },
+            {
+              name: "Probability & Statistics for Machine Learning & Data Science",
+              link: "https://www.coursera.org/account/accomplishments/verify/8N3RUXKYSU6S",
+            },
+          ],
+        },
+      ],
+    },
+
     contact: {
       title: "Entrar em Contato",
       namePlaceholder: "Seu nome...",
@@ -105,6 +134,7 @@ export const translations = {
       home: "Home",
       about: "About Me",
       projects: "Projects",
+      certifications: "Certifications",
       contact: "Contact",
     },
 
@@ -169,6 +199,34 @@ export const translations = {
         },
       ],
       viewProject: "View Project →",
+    },
+
+    certifications: {
+      title: "Certifications",
+      subtitle: "Courses and certifications completed on Coursera",
+      verify: "Verify",
+      courses: "Included courses",
+      items: [
+        {
+          name: "Mathematics for Machine Learning and Data Science",
+          issuer: "DeepLearning.AI (Coursera)",
+          link: "https://www.coursera.org/account/accomplishments/specialization/JJR2FN1GZ7F0",
+          courses: [
+            {
+              name: "Linear Algebra for Machine Learning and Data Science",
+              link: "https://www.coursera.org/account/accomplishments/verify/HJOK50N5TN4Z",
+            },
+            {
+              name: "Calculus for Machine Learning and Data Science",
+              link: "https://www.coursera.org/account/accomplishments/verify/QKOEFC8WRWT9",
+            },
+            {
+              name: "Probability & Statistics for Machine Learning & Data Science",
+              link: "https://www.coursera.org/account/accomplishments/verify/8N3RUXKYSU6S",
+            },
+          ],
+        },
+      ],
     },
 
     contact: {

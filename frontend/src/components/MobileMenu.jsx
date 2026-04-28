@@ -26,6 +26,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         {[
           { href: "#home", label: t("navbar.home"), delay: "delay-75" },
           { href: "#about", label: t("navbar.about"), delay: "delay-100" },
+          { href: "#certifications", label: t("navbar.certifications"), delay: "delay-125" },
           { href: "#contact", label: t("navbar.contact"), delay: "delay-150" },
         ].map(({ href, label, delay }) => (
           <a
@@ -41,7 +42,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
       </div>
 
       <div className="px-8 pb-10">
-        <p className="text-xs text-[#7A6055]">felipefarias.tech</p>
+        <p className="text-xs text-[#7A6055]">Felipe Farias</p>
       </div>
     </div>
   );
