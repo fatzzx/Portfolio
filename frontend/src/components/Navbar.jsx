@@ -10,46 +10,36 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
   }, [menuOpen]);
 
   return (
-    <nav className="fixed top-0 w-full z-40 bg-[rgba(10, 10, 10, 0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
-      <div className="max-w-5xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          <a href="#home" className="font-mono text-xl font-bold text-white">
-            {" "}
-            felipefarias<span className="text-blue-500">.tech</span>{" "}
+    <nav className="fixed top-0 w-full z-40 bg-[#F9F7F5]/90 backdrop-blur-md border-b border-[#5D4432]/12">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex justify-between items-center h-14">
+          <a href="#home" className="font-['JetBrains_Mono',monospace] text-sm font-medium text-[#5D4432] tracking-tight">
+            felipefarias<span className="opacity-50">.tech</span>
           </a>
 
           <div
-            className="w-7 h-5 relative cursor-pointer z-40 md:hidden"
+            className="w-6 h-5 relative cursor-pointer z-40 md:hidden flex flex-col justify-between"
             onClick={() => setMenuOpen((prev) => !prev)}
           >
-            &#9776;
+            <span className="block w-full h-0.5 bg-[#3E2B1E]" />
+            <span className="block w-full h-0.5 bg-[#3E2B1E]" />
+            <span className="block w-4 h-0.5 bg-[#3E2B1E]" />
           </div>
 
-          <div className="hidden md:flex items-center space-x-6">
-            <a
-              href="#home"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              {t("navbar.home")}
-            </a>
-            <a
-              href="#about"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              {t("navbar.about")}
-            </a>
-            {/* <a
-              href="#projects"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              {t("navbar.projects")}
-            </a>*/}
-            <a
-              href="#contact"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              {t("navbar.contact")}
-            </a>
+          <div className="hidden md:flex items-center gap-8">
+            {[
+              { href: "#home", label: t("navbar.home") },
+              { href: "#about", label: t("navbar.about") },
+              { href: "#contact", label: t("navbar.contact") },
+            ].map(({ href, label }) => (
+              <a
+                key={href}
+                href={href}
+                className="text-sm text-[#7A6055] hover:text-[#3E2B1E] transition-colors font-medium"
+              >
+                {label}
+              </a>
+            ))}
             <LanguageToggle />
           </div>
         </div>

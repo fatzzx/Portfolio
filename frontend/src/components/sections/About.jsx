@@ -1,8 +1,14 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { useTranslation } from "../../hooks/useTranslation";
 import { usePDFGenerator } from "../../hooks/usePDFGenerator";
-import { FaDownload, FaChevronDown } from "react-icons/fa";
+import { Download, ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+
+const SkillBadge = ({ label }) => (
+  <span className="inline-flex items-center px-3 py-1 rounded-md bg-[#E9E3DD] text-[#5D4432] text-xs font-semibold">
+    {label}
+  </span>
+);
 
 export const About = () => {
   const { t } = useTranslation();
@@ -11,15 +17,7 @@ export const About = () => {
   const dropdownRef = useRef(null);
 
   const frontendSkills = ["React", "TailwindCSS", "JavaScript"];
-  const backendSkills = [
-    "TypeScript",
-    "NestJS",
-    "Express",
-    "Python",
-    ".NET",
-    "SQL Server",
-    "Java",
-  ];
+  const backendSkills = ["TypeScript", "NestJS", "Express", "Python", ".NET", "SQL Server", "Java"];
 
   const handleDownloadPDF = (lang) => {
     generatePDF(lang);
@@ -32,122 +30,124 @@ export const About = () => {
         setShowDropdown(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
-    <section
-      id="about"
-      className="min-h-screen flex items-center justify-center py-20"
-    >
-      <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
-          <div className="flex justify-between items-start mb-8">
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-              {t("about.title")}
-            </h2>
+    <section id="about" className="py-24 bg-[#F2EDE8]">
+      <div className="max-w-6xl mx-auto px-6">
+        <RevealOnScroll>
+
+          {/* Header */}
+          <div className="flex justify-between items-start mb-14">
+            <div>
+              <p className="text-xs font-semibold text-[#5D4432] tracking-widest uppercase mb-3">sobre</p>
+              <h2 className="text-4xl font-bold text-[#3E2B1E]">{t("about.title")}</h2>
+            </div>
 
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setShowDropdown(!showDropdown)}
-                className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-medium transition-all hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+                className="flex items-center gap-2 border border-[#5D4432]/35 text-[#5D4432] px-4 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-[#5D4432] hover:text-[#F9F7F5]"
               >
-                <FaDownload />
+                <Download size={13} />
                 {t("about.downloadCV")}
-                <FaChevronDown
-                  className={`transition-transform ${
-                    showDropdown ? "rotate-180" : ""
-                  }`}
-                />
+                <ChevronDown size={13} className={`transition-transform ${showDropdown ? "rotate-180" : ""}`} />
               </button>
 
               {showDropdown && (
-                <div className="absolute right-0 mt-2 w-48 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg z-10">
+                <div className="absolute right-0 mt-2 w-44 bg-[#F9F7F5] border border-[#5D4432]/15 rounded-xl shadow-lg z-10 overflow-hidden">
                   <button
                     onClick={() => handleDownloadPDF("pt")}
-                    className="w-full text-left px-4 py-3 text-white hover:bg-white/10 rounded-t-lg transition-colors"
+                    className="w-full text-left px-4 py-3 text-sm text-[#3E2B1E] hover:bg-[#E9E3DD] transition-colors"
                   >
-                    🇧🇷 Português
+                    Português
                   </button>
+                  <div className="h-px bg-[#5D4432]/10 mx-3" />
                   <button
                     onClick={() => handleDownloadPDF("en")}
-                    className="w-full text-left px-4 py-3 text-white hover:bg-white/10 rounded-b-lg transition-colors"
+                    className="w-full text-left px-4 py-3 text-sm text-[#3E2B1E] hover:bg-[#E9E3DD] transition-colors"
                   >
-                    🇺🇸 English
+                    English
                   </button>
                 </div>
               )}
             </div>
           </div>
 
-          <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-            <p className="text-gray-300 mb-6 text-center">
+          {/* Bio */}
+          <div className="mb-12">
+            <p className="text-[#7A6055] text-base leading-relaxed max-w-2xl">
               {t("about.description")}
             </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4">
-                  {t("about.frontend")}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {frontendSkills.map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+          {/* Skills */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div className="bg-[#F9F7F5] rounded-2xl p-6 border border-[#5D4432]/10">
+              <h3 className="text-xs font-bold text-[#3E2B1E] uppercase tracking-wide mb-4">
+                {t("about.frontend")}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {frontendSkills.map((tech) => <SkillBadge key={tech} label={tech} />)}
               </div>
+            </div>
 
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4">{t("about.backend")}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {backendSkills.map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+            <div className="bg-[#F9F7F5] rounded-2xl p-6 border border-[#5D4432]/10">
+              <h3 className="text-xs font-bold text-[#3E2B1E] uppercase tracking-wide mb-4">
+                {t("about.backend")}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {backendSkills.map((tech) => <SkillBadge key={tech} label={tech} />)}
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4">{t("about.education")}</h3>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
+          {/* Education + Experience */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-[#F9F7F5] rounded-2xl p-6 border border-[#5D4432]/10">
+              <h3 className="text-xs font-bold text-[#3E2B1E] uppercase tracking-wide mb-5">
+                {t("about.education")}
+              </h3>
+              <ul className="space-y-3">
                 {t("about.educationItems").map((item, index) => (
-                  <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+                  <li key={index} className="flex gap-3">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#5D4432] flex-shrink-0" />
+                    <span
+                      className="text-sm text-[#7A6055] leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: item }}
+                    />
+                  </li>
                 ))}
               </ul>
             </div>
 
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4">
+            <div className="bg-[#F9F7F5] rounded-2xl p-6 border border-[#5D4432]/10">
+              <h3 className="text-xs font-bold text-[#3E2B1E] uppercase tracking-wide mb-5">
                 {t("about.experience")}
               </h3>
-              <div className="space-y-4 text-gray-300">
-                {t("about.experienceItems").map((item, index) => (
-                  <div key={index}>
-                    <h4 className="font-semibold">{item.title}</h4>
-                    <p>{item.description}</p>
+              <div className="space-y-5">
+                {t("about.experienceItems").map((item, index, arr) => (
+                  <div key={index} className="flex gap-3">
+                    <div className="flex flex-col items-center pt-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5D4432] flex-shrink-0" />
+                      {index < arr.length - 1 && (
+                        <span className="w-px flex-1 bg-[#5D4432]/15 mt-1" />
+                      )}
+                    </div>
+                    <div className="pb-2">
+                      <p className="text-sm font-semibold text-[#3E2B1E]">{item.title}</p>
+                      <p className="text-sm text-[#7A6055] leading-relaxed mt-0.5">{item.description}</p>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-        </div>
-      </RevealOnScroll>
+
+        </RevealOnScroll>
+      </div>
     </section>
   );
 };

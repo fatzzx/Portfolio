@@ -14,7 +14,7 @@ function App() {
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-black text-gray-100">
+      <div className="min-h-screen bg-[#F9F7F5] text-[#3E2B1E]">
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Home />

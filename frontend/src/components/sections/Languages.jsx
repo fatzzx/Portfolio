@@ -1,56 +1,75 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { useTranslation } from "../../hooks/useTranslation";
 
+
 export const Languages = () => {
   const { t } = useTranslation();
 
+  const langs = [
+    {
+      name: "Português",
+      level: t("languages.native"),
+      description: t("languages.nativeDesc"),
+      percent: 100,
+    },
+    {
+      name: "English",
+      level: "C1",
+      description: t("languages.c1"),
+      percent: 85,
+    },
+    {
+      name: "French",
+      level: "A2",
+      description: t("languages.a2"),
+      percent: 40,
+      badge: t("languages.inProgress"),
+    },
+  ];
+
   return (
-    <section
-      id="languages"
-      className="min-h-screen flex items-center justify-center py-20"
-    >
-      <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            {t("languages.title")}
-          </h2>
+    <section id="languages" className="py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <RevealOnScroll>
+          <p className="text-xs font-semibold text-[#5D4432] tracking-widest uppercase mb-3">idiomas</p>
+          <h2 className="text-4xl font-bold text-[#3E2B1E] mb-14">{t("languages.title")}</h2>
 
-          <div className="space-y-6">
-            {/* English */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 transition-all">
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="text-lg font-semibold">English</h3>
-                <span className="text-sm text-gray-400">C1</span>
-              </div>
-
-              <div className="w-full bg-white/10 rounded-full h-2">
-                <div className="bg-blue-500 h-2 rounded-full w-[85%]" />
-              </div>
-
-              <p className="text-sm text-gray-400 mt-2">{t("languages.c1")}</p>
-            </div>
-
-            {/* French */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 transition-all">
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="text-lg font-semibold flex items-center gap-2">
-                  French
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400">
-                    {t("languages.inProgress")}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {langs.map((lang, i) => (
+              <div
+                key={lang.name}
+                className={`bg-[#F2EDE8] rounded-2xl p-7 border border-[#5D4432]/10 hover:-translate-y-1 transition-transform duration-200${i === 0 ? " md:col-span-2" : ""}`}
+              >
+                <div className="flex items-start justify-between mb-5">
+                  <div className="flex items-center gap-3">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <h3 className="text-base font-bold text-[#3E2B1E]">{lang.name}</h3>
+                        {lang.badge && (
+                          <span className="text-xs px-2 py-0.5 rounded-full bg-[#5D4432]/12 text-[#5D4432] font-medium">
+                            {lang.badge}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-xs text-[#7A6055] mt-0.5">{lang.description}</p>
+                    </div>
+                  </div>
+                  <span className="text-sm font-bold text-[#5D4432] bg-[#5D4432]/10 px-2.5 py-1 rounded-md">
+                    {lang.level}
                   </span>
-                </h3>
-                <span className="text-sm text-gray-400">A2</span>
-              </div>
+                </div>
 
-              <div className="w-full bg-white/10 rounded-full h-2">
-                <div className="bg-blue-500 h-2 rounded-full w-[40%]" />
+                <div className="w-full bg-[#E9E3DD] rounded-full h-1.5">
+                  <div
+                    className="bg-[#5D4432] h-1.5 rounded-full transition-all duration-700"
+                    style={{ width: `${lang.percent}%` }}
+                  />
+                </div>
               </div>
-
-              <p className="text-sm text-gray-400 mt-2">{t("languages.a2")}</p>
-            </div>
+            ))}
           </div>
-        </div>
-      </RevealOnScroll>
+        </RevealOnScroll>
+      </div>
     </section>
   );
 };

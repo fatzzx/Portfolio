@@ -7,92 +7,41 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full bg-[rgba(10,10,10,0.8)] backdrop-blur-lg z-40 flex flex-col items-center justify-center
-                     transition-all duration-300 ease-in-out
-
-                     ${
-                       menuOpen
-                         ? "h-screen opacity-100 pointer-events-auto"
-                         : "h-0 opacity-0 pointer-events-none"
-                     }
-                   `}
+      className={`fixed inset-0 bg-[#F9F7F5] z-40 flex flex-col
+                  transition-all duration-300 ease-in-out
+                  ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
     >
-      {/* Header do menu com botão de fechar e toggle de idioma */}
-      <div className="absolute top-6 left-6 right-6 flex justify-between items-center">
-        <div
-          className={`transform transition-all duration-300 ${
-            menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"
-          }`}
-        >
-          <LanguageToggle />
-        </div>
+      <div className="flex justify-between items-center px-6 h-14 border-b border-[#5D4432]/12">
+        <LanguageToggle />
         <button
           onClick={() => setMenuOpen(false)}
-          className="text-white text-3xl focus:outline-none cursor-pointer"
-          aria-label="Close Menu"
+          className="text-[#3E2B1E] text-2xl leading-none focus:outline-none"
+          aria-label="Fechar menu"
         >
           &times;
         </button>
       </div>
 
-      {/* Links de navegação com espaçamento ajustado */}
-      <div className="flex flex-col items-center space-y-8 mt-8">
-        <a
-          href="#home"
-          onClick={() => setMenuOpen(false)}
-          className={`text-2xl font-semibold text-white transform transition-all duration-300 delay-100
-                      hover:text-blue-400 hover:scale-110
-                      ${
-                        menuOpen
-                          ? "opacity-100 translate-y-0"
-                          : "opacity-0 translate-y-5"
-                      }
-              `}
-        >
-          {t("navbar.home")}
-        </a>
-        <a
-          href="#about"
-          onClick={() => setMenuOpen(false)}
-          className={`text-2xl font-semibold text-white transform transition-all duration-300 delay-200
-                      hover:text-blue-400 hover:scale-110
-                      ${
-                        menuOpen
-                          ? "opacity-100 translate-y-0"
-                          : "opacity-0 translate-y-5"
-                      }
-          `}
-        >
-          {t("navbar.about")}
-        </a>
-        <a
-          href="#projects"
-          onClick={() => setMenuOpen(false)}
-          className={`text-2xl font-semibold text-white transform transition-all duration-300 delay-300
-                      hover:text-blue-400 hover:scale-110
-                      ${
-                        menuOpen
-                          ? "opacity-100 translate-y-0"
-                          : "opacity-0 translate-y-5"
-                      }
-          `}
-        >
-          {t("navbar.projects")}
-        </a>
-        <a
-          href="#contact"
-          onClick={() => setMenuOpen(false)}
-          className={`text-2xl font-semibold text-white transform transition-all duration-300 delay-500
-                      hover:text-blue-400 hover:scale-110
-                      ${
-                        menuOpen
-                          ? "opacity-100 translate-y-0"
-                          : "opacity-0 translate-y-5"
-                      }
-          `}
-        >
-          {t("navbar.contact")}
-        </a>
+      <div className="flex flex-col justify-center flex-1 px-8 gap-10">
+        {[
+          { href: "#home", label: t("navbar.home"), delay: "delay-75" },
+          { href: "#about", label: t("navbar.about"), delay: "delay-100" },
+          { href: "#contact", label: t("navbar.contact"), delay: "delay-150" },
+        ].map(({ href, label, delay }) => (
+          <a
+            key={href}
+            href={href}
+            onClick={() => setMenuOpen(false)}
+            className={`text-4xl font-bold text-[#3E2B1E] hover:text-[#5D4432] transition-all duration-300 ${delay}
+                        ${menuOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"}`}
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+
+      <div className="px-8 pb-10">
+        <p className="text-xs text-[#7A6055]">felipefarias.tech</p>
       </div>
     </div>
   );

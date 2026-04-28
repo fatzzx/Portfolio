@@ -1,7 +1,9 @@
 export const translations = {
   pt: {
     languages: {
-      title: "🌍 Competência Linguística",
+      title: "Competência Linguística",
+      native: "Nativo",
+      nativeDesc: "Língua materna.",
       inProgress: "Em estudo",
       c1: "Nível avançado – comunicação fluente em contextos profissionais e técnicos.",
       a2: "Nível básico-intermediário – atualmente em estudo, com foco em evolução contínua e uso profissional futuro.",
@@ -17,7 +19,7 @@ export const translations = {
     home: {
       greeting: "Olá, me chamo Felipe Farias!",
       description:
-        "👋 Olá! Sou Felipe Spinola Farias, profissional da área de desenvolvimento de sistemas, com atuação no desenvolvimento e manutenção de aplicações e sistemas internos.",
+        "Desenvolvedor de software focado em backend, com experiência em sistemas internos, aplicações web e monitoramento.",
       contactButton: "Entrar em Contato",
     },
 
@@ -29,8 +31,8 @@ export const translations = {
       frontend: "Frontend",
       backend: "Backend",
 
-      education: "🏫 Formação",
-      experience: "💼 Experiência Profissional",
+      education: "Formação",
+      experience: "Experiência Profissional",
       downloadCV: "Baixar Currículo",
 
       educationItems: [
@@ -47,7 +49,7 @@ export const translations = {
         },
         {
           title:
-            "Desenvolvedor Backend – ACP GROUP / PGE-BA (2024 - 2025 • Contrato Temporário)",
+            "Desenvolvedor Backend – ACP GROUP / PGE-BA (2024 - 2025 · Contrato Temporário)",
           description:
             "Desenvolvimento e manutenção de sistemas internos com C#, .NET, SQL Server e IIS. Atuei também na manutenção de sistemas legados em Java (Spring Boot/JSP), realizando integrações essenciais com outros órgãos públicos.",
         },
@@ -55,9 +57,8 @@ export const translations = {
           title:
             "Pesquisa Aplicada em Computação Quântica – SENAI CIMATEC",
           description:
-            "Realizei estudos teóricos e experimentos em comunicação quântica no SENAI CIMATEC, com foco no protocolo BB84 para distribuição quântica de chaves (QKD) e transmissão segura de informações.",
+            "Estudos teóricos e experimentos em comunicação quântica com foco no protocolo BB84 para distribuição quântica de chaves (QKD) e transmissão segura de informações.",
         },
-
       ],
     },
 
@@ -85,14 +86,16 @@ export const translations = {
       sendButton: "Enviar via Gmail",
       sending: "Redirecionando...",
       successMessage:
-        "✅ Redirecionando para o Gmail! Se não abriu automaticamente, verifique se pop-ups estão bloqueados.",
+        "Redirecionando para o Gmail! Se não abriu automaticamente, verifique se pop-ups estão bloqueados.",
       errorMessage: "Houve um problema ao abrir o Gmail. Tente novamente.",
     },
   },
 
   en: {
     languages: {
-      title: "🌍 Language Proficiency",
+      title: "Language Proficiency",
+      native: "Native",
+      nativeDesc: "Mother tongue.",
       inProgress: "In progress",
       c1: "Advanced level – fluent communication in professional and technical contexts.",
       a2: "Elementary to pre-intermediate level – currently studying, with focus on continuous improvement and future professional use.",
@@ -108,7 +111,7 @@ export const translations = {
     home: {
       greeting: "Hello, I'm Felipe Farias!",
       description:
-        "👋 Hello! I'm Felipe Spinola Farias, a technology professional working with systems development and internal applications.",
+        "Software developer focused on backend, with experience in internal systems, web applications and observability.",
       contactButton: "Get in Touch",
     },
 
@@ -120,8 +123,8 @@ export const translations = {
       frontend: "Frontend",
       backend: "Backend",
 
-      education: "🏫 Education",
-      experience: "💼 Professional Experience",
+      education: "Education",
+      experience: "Professional Experience",
       downloadCV: "Download Resume",
 
       educationItems: [
@@ -138,7 +141,7 @@ export const translations = {
         },
         {
           title:
-            "Backend Developer – ACP GROUP / PGE-BA (2024 - 2025 • Temporary Contract)",
+            "Backend Developer – ACP GROUP / PGE-BA (2024 - 2025 · Temporary Contract)",
           description:
             "Development and maintenance of internal systems using C#, .NET, SQL Server, and IIS. Also worked on the maintenance of legacy Java (Spring Boot/JSP) systems, developing essential integrations with other public agencies.",
         },
@@ -146,9 +149,8 @@ export const translations = {
           title:
             "Applied Research in Quantum Computing – SENAI CIMATEC",
           description:
-            "Conducted theoretical studies and experiments in quantum communication at SENAI CIMATEC, with a focus on the BB84 protocol for Quantum Key Distribution (QKD) and secure information transmission.",
+            "Theoretical studies and experiments in quantum communication with a focus on the BB84 protocol for Quantum Key Distribution (QKD) and secure information transmission.",
         },
-
       ],
     },
 
@@ -176,7 +178,7 @@ export const translations = {
       sendButton: "Send via Gmail",
       sending: "Redirecting...",
       successMessage:
-        "✅ Redirecting to Gmail! If it didn't open automatically, check if pop-ups are blocked.",
+        "Redirecting to Gmail! If it didn't open automatically, check if pop-ups are blocked.",
       errorMessage: "There was a problem opening Gmail. Please try again.",
     },
   },
