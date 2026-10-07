@@ -1,153 +1,126 @@
-import { RevealOnScroll } from "../RevealOnScroll";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
-import { usePDFGenerator } from "../../hooks/usePDFGenerator";
-import { Download, ChevronDown } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { experienceMeta } from "../../data/experience";
+import { Section, Logo } from "../Section";
+import { BlurFade } from "../magicui/BlurFade";
+import tldLogo from "../../assets/img/logos/tld.png";
+import pgeLogo from "../../assets/img/logos/pge.png";
+import cimatecLogo from "../../assets/img/logos/cimatec.png";
+import vieiraLogo from "../../assets/img/logos/antonio-vieira.png";
+import { ChevronRight, Database, Activity } from "lucide-react";
+import {
+  SiTypescript, SiNestjs, SiExpress, SiPython, SiDotnet, SiOpenjdk,
+  SiReact, SiTailwindcss, SiJavascript, SiGrafana,
+} from "react-icons/si";
 
-const SkillBadge = ({ label }) => (
-  <span className="inline-flex items-center px-3 py-1 rounded-md bg-[#E9E3DD] text-[#5D4432] text-xs font-semibold">
-    {label}
-  </span>
-);
+const skills = [
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "NestJS", icon: SiNestjs },
+  { name: "Express", icon: SiExpress },
+  { name: "Python", icon: SiPython },
+  { name: ".NET", icon: SiDotnet },
+  { name: "SQL Server", icon: Database },
+  { name: "Java", icon: SiOpenjdk },
+  { name: "React", icon: SiReact },
+  { name: "TailwindCSS", icon: SiTailwindcss },
+  { name: "JavaScript", icon: SiJavascript },
+  { name: "Zabbix", icon: Activity },
+  { name: "Grafana", icon: SiGrafana },
+];
+const jobLogos = [
+  { src: tldLogo, fit: "cover" },
+  { src: pgeLogo, fit: "emblem" },
+  { src: cimatecLogo, fit: "zoom" },
+];
+const eduLogos = [
+  { src: cimatecLogo, fit: "zoom" },
+  { src: vieiraLogo, fit: "contain" },
+];
 
-export const About = () => {
-  const { t } = useTranslation();
-  const { generatePDF } = usePDFGenerator();
-  const [showDropdown, setShowDropdown] = useState(false);
-  const dropdownRef = useRef(null);
-
-  const frontendSkills = ["React", "TailwindCSS", "JavaScript"];
-  const backendSkills = ["TypeScript", "NestJS", "Express", "Python", ".NET", "SQL Server", "Java"];
-
-  const handleDownloadPDF = (lang) => {
-    generatePDF(lang);
-    setShowDropdown(false);
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setShowDropdown(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+const Job = ({ job, meta, logo, defaultOpen }) => {
+  const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <section id="about" className="py-24 bg-[#F2EDE8]">
-      <div className="max-w-6xl mx-auto px-6">
-        <RevealOnScroll>
-
-          {/* Header */}
-          <div className="flex justify-between items-start mb-14">
-            <div>
-              <p className="text-xs font-semibold text-[#5D4432] tracking-widest uppercase mb-3">sobre</p>
-              <h2 className="text-4xl font-bold text-[#3E2B1E]">{t("about.title")}</h2>
-            </div>
-
-            <div className="relative" ref={dropdownRef}>
-              <button
-                onClick={() => setShowDropdown(!showDropdown)}
-                className="flex items-center gap-2 border border-[#5D4432]/35 text-[#5D4432] px-4 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-[#5D4432] hover:text-[#F9F7F5]"
-              >
-                <Download size={13} />
-                {t("about.downloadCV")}
-                <ChevronDown size={13} className={`transition-transform ${showDropdown ? "rotate-180" : ""}`} />
-              </button>
-
-              {showDropdown && (
-                <div className="absolute right-0 mt-2 w-44 bg-[#F9F7F5] border border-[#5D4432]/15 rounded-xl shadow-lg z-10 overflow-hidden">
-                  <button
-                    onClick={() => handleDownloadPDF("pt")}
-                    className="w-full text-left px-4 py-3 text-sm text-[#3E2B1E] hover:bg-[#E9E3DD] transition-colors"
-                  >
-                    Português
-                  </button>
-                  <div className="h-px bg-[#5D4432]/10 mx-3" />
-                  <button
-                    onClick={() => handleDownloadPDF("en")}
-                    className="w-full text-left px-4 py-3 text-sm text-[#3E2B1E] hover:bg-[#E9E3DD] transition-colors"
-                  >
-                    English
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Bio */}
-          <div className="mb-12">
-            <p className="text-[#7A6055] text-base leading-relaxed max-w-2xl">
-              {t("about.description")}
-            </p>
-          </div>
-
-          {/* Skills */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <div className="bg-[#F9F7F5] rounded-2xl p-6 border border-[#5D4432]/10">
-              <h3 className="text-xs font-bold text-[#3E2B1E] uppercase tracking-wide mb-4">
-                {t("about.frontend")}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {frontendSkills.map((tech) => <SkillBadge key={tech} label={tech} />)}
-              </div>
-            </div>
-
-            <div className="bg-[#F9F7F5] rounded-2xl p-6 border border-[#5D4432]/10">
-              <h3 className="text-xs font-bold text-[#3E2B1E] uppercase tracking-wide mb-4">
-                {t("about.backend")}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {backendSkills.map((tech) => <SkillBadge key={tech} label={tech} />)}
-              </div>
-            </div>
-          </div>
-
-          {/* Education + Experience */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#F9F7F5] rounded-2xl p-6 border border-[#5D4432]/10">
-              <h3 className="text-xs font-bold text-[#3E2B1E] uppercase tracking-wide mb-5">
-                {t("about.education")}
-              </h3>
-              <ul className="space-y-3">
-                {t("about.educationItems").map((item, index) => (
-                  <li key={index} className="flex gap-3">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#5D4432] flex-shrink-0" />
-                    <span
-                      className="text-sm text-[#7A6055] leading-relaxed"
-                      dangerouslySetInnerHTML={{ __html: item }}
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-[#F9F7F5] rounded-2xl p-6 border border-[#5D4432]/10">
-              <h3 className="text-xs font-bold text-[#3E2B1E] uppercase tracking-wide mb-5">
-                {t("about.experience")}
-              </h3>
-              <div className="space-y-5">
-                {t("about.experienceItems").map((item, index, arr) => (
-                  <div key={index} className="flex gap-3">
-                    <div className="flex flex-col items-center pt-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#5D4432] flex-shrink-0" />
-                      {index < arr.length - 1 && (
-                        <span className="w-px flex-1 bg-[#5D4432]/15 mt-1" />
-                      )}
-                    </div>
-                    <div className="pb-2">
-                      <p className="text-sm font-semibold text-[#3E2B1E]">{item.title}</p>
-                      <p className="text-sm text-[#7A6055] leading-relaxed mt-0.5">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-        </RevealOnScroll>
+    <li>
+      <button
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        className="group flex items-center justify-between gap-x-3 w-full text-left cursor-pointer"
+      >
+        <span className="flex items-center gap-x-3 min-w-0 flex-1">
+          <Logo src={logo.src} fit={logo.fit} alt={meta.org} />
+          <span className="min-w-0 flex flex-col gap-0.5">
+            <span className="font-semibold leading-none flex items-center gap-2">
+              {meta.org}
+              <ChevronRight
+                size={14}
+                aria-hidden="true"
+                className={`text-graphite transition-all duration-300 ${open ? "rotate-90 opacity-100" : "opacity-0 group-hover:opacity-100 group-hover:translate-x-1"}`}
+              />
+            </span>
+            <span className="text-sm text-graphite">
+              {meta.role}
+              {meta.note && ` · ${meta.note}`}
+            </span>
+          </span>
+        </span>
+        <span className="text-xs tabular-nums text-graphite text-right shrink-0">{meta.period}</span>
+      </button>
+      <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+        <div className="overflow-hidden">
+          <p className="pt-2 pl-11 md:pl-13 text-xs sm:text-sm text-graphite leading-relaxed text-pretty">{job.description}</p>
+        </div>
       </div>
-    </section>
+    </li>
+  );
+};
+
+export const About = () => {
+  const { t, language } = useTranslation();
+  const meta = experienceMeta[language];
+  const jobs = t("about.experienceItems");
+
+  return (
+    <>
+      <Section id="about" title={t("about.title")}>
+        <p className="text-graphite leading-relaxed text-pretty">{t("about.description")}</p>
+      </Section>
+
+      <Section title={t("about.experience")}>
+        <ul className="list-none p-0 m-0 grid gap-6">
+          {jobs.map((job, i) => (
+            <Job key={i} job={job} meta={meta[i]} logo={jobLogos[i]} defaultOpen={i === 0} />
+          ))}
+        </ul>
+      </Section>
+
+      <Section title={t("about.education")}>
+        <ul className="list-none p-0 m-0 flex flex-col gap-6">
+          {t("about.educationItems").map((item, i) => (
+            <li key={i} className="flex items-center gap-x-3">
+              <Logo src={eduLogos[i].src} fit={eduLogos[i].fit} alt="" />
+              <span dangerouslySetInnerHTML={{ __html: item }} />
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <section id="skills">
+        <div className="flex flex-col gap-y-4">
+          <BlurFade inView><h2 className="text-xl font-bold">Skills</h2></BlurFade>
+          <div className="flex flex-wrap gap-2">
+            {skills.map(({ name, icon: Icon }, i) => (
+              <BlurFade key={name} delay={i * 0.04} inView>
+                <div className="border border-rule bg-paper ring-2 ring-rule/40 rounded-xl h-8 w-fit px-4 flex items-center gap-2">
+                  <Icon className="size-4" aria-hidden="true" />
+                  <span className="text-sm font-medium">{name}</span>
+                </div>
+              </BlurFade>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 };

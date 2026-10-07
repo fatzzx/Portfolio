@@ -22,6 +22,9 @@ export const translations = {
       description:
         "Desenvolvedor de software focado em backend, com experiência em sistemas internos, aplicações web e monitoramento.",
       contactButton: "Entrar em Contato",
+      status: "Em operação desde 2024",
+      chartLabel: "Linha do tempo profissional",
+      now: "hoje",
     },
 
     about: {
@@ -64,17 +67,33 @@ export const translations = {
     },
 
     projects: {
-      title: "Meus Projetos",
+      title: "Confira meus trabalhos",
+      intro: "Projetos pessoais e de pesquisa, de simuladores de criptografia quântica a plataformas web.",
       items: [
         {
-          title: "BB84 Simulator",
+          title: "AVSYS",
           description:
-            "Simulador do protocolo BB84 para criptografia quântica e distribuição segura de chaves",
+            "Sistema distribuído de reserva de passagens aéreas pensado para alta concorrência: lock distribuído e filas de mensagens impedem a reserva duplicada do mesmo assento.",
+        },
+        {
+          title: "Cheguei",
+          description:
+            "Controle de encomendas para portaria de condomínio: a encomenda entra com foto, o morador é avisado no WhatsApp e a retirada é assinada na tela.",
+        },
+        {
+          title: "Fabdle",
+          description:
+            "Jogo diário no estilo Wordle em que você adivinha o herói de Flesh and Blood, o jogo de cartas.",
         },
         {
           title: "Consulta de Jogos",
           description:
             "Plataforma para consultar informações de jogos, preços e criar lista de favoritos",
+        },
+        {
+          title: "BB84 Simulator",
+          description:
+            "Simulador do protocolo BB84 para criptografia quântica e distribuição segura de chaves",
         },
       ],
       viewProject: "Ver Projeto →",
@@ -110,6 +129,7 @@ export const translations = {
 
     contact: {
       title: "Entrar em Contato",
+      intro: "Quer conversar? Me chame pelo formulário abaixo, pelo LinkedIn ou pelo WhatsApp e eu respondo assim que puder.",
       namePlaceholder: "Seu nome...",
       messagePlaceholder: "Sua mensagem...",
       sendButton: "Enviar via Gmail",
@@ -143,6 +163,9 @@ export const translations = {
       description:
         "Software developer focused on backend, with experience in internal systems, web applications and observability.",
       contactButton: "Get in Touch",
+      status: "In operation since 2024",
+      chartLabel: "Professional timeline",
+      now: "now",
     },
 
     about: {
@@ -185,17 +208,33 @@ export const translations = {
     },
 
     projects: {
-      title: "My Projects",
+      title: "Check out my latest work",
+      intro: "Personal and research projects, from quantum cryptography simulators to web platforms.",
       items: [
         {
-          title: "BB84 Simulator",
+          title: "AVSYS",
           description:
-            "BB84 protocol simulator for quantum cryptography and secure key distribution",
+            "Distributed flight booking system built for high concurrency: a distributed lock and message queues prevent the same seat from being booked twice.",
+        },
+        {
+          title: "Cheguei",
+          description:
+            "Parcel tracking for condominium front desks: the parcel is logged with a photo, the resident gets a WhatsApp notice and pickup is signed on screen.",
+        },
+        {
+          title: "Fabdle",
+          description:
+            "Daily Wordle-style game where you guess the Flesh and Blood hero, the card game.",
         },
         {
           title: "Games Consultation",
           description:
             "Platform to consult game information, prices and create favorites list",
+        },
+        {
+          title: "BB84 Simulator",
+          description:
+            "BB84 protocol simulator for quantum cryptography and secure key distribution",
         },
       ],
       viewProject: "View Project →",
@@ -231,6 +270,7 @@ export const translations = {
 
     contact: {
       title: "Get in Touch",
+      intro: "Want to chat? Reach me through the form below, on LinkedIn or on WhatsApp and I'll reply whenever I can.",
       namePlaceholder: "Your name...",
       messagePlaceholder: "Your message...",
       sendButton: "Send via Gmail",
