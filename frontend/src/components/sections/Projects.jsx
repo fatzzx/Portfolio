@@ -3,7 +3,7 @@ import { useTranslation } from "../../hooks/useTranslation";
 import { Chip } from "../Section";
 import { BlurFade } from "../magicui/BlurFade";
 import { ArrowUpRight } from "lucide-react";
-import gamesShot from "../../assets/img/project-games.jpg";
+import archivumShot from "../../assets/img/project-archivum.jpg";
 import chegueiShot from "../../assets/img/project-cheguei.jpg";
 import fabdleShot from "../../assets/img/project-fabdle.jpg";
 
@@ -12,7 +12,7 @@ const projectsData = [
   { link: "https://github.com/fatzzx/avsys", tags: ["Bun", "ElysiaJS", "Redis", "RabbitMQ", "NGINX", "Docker"], art: "services" },
   { link: "https://cheguei.gtstech.business", tags: ["Bun", "Elysia", "Postgres", "Next.js", "WhatsApp"], image: chegueiShot },
   { link: "https://fabdle-three.vercel.app", tags: ["TypeScript", "Vite"], image: fabdleShot },
-  { link: "https://play-worth.vercel.app/", tags: ["JavaScript", "Vite", "RAWG API"], image: gamesShot },
+  { link: "https://archivum.fzx.lat/", tags: ["TypeScript", "React", "Vite", "Multiplayer"], image: archivumShot },
   { link: "https://github.com/fatzzx/BB84-simulator", tags: ["TypeScript", "BB84", "QKD"], art: "basis" },
 ];
 

@@ -98,9 +98,9 @@ export const translations = {
             "Jogo diário no estilo Wordle em que você adivinha o herói de Flesh and Blood, o jogo de cartas.",
         },
         {
-          title: "Consulta de Jogos",
+          title: "Archivum",
           description:
-            "Plataforma para consultar informações de jogos, preços e criar lista de favoritos",
+            "Simulador fan-made do Grand Archive TCG com as regras completas: monte decks, jogue online contra outras pessoas ou treine contra um bot.",
         },
         {
           title: "BB84 Simulator",
@@ -251,9 +251,9 @@ export const translations = {
             "Daily Wordle-style game where you guess the Flesh and Blood hero, the card game.",
         },
         {
-          title: "Games Consultation",
+          title: "Archivum",
           description:
-            "Platform to consult game information, prices and create favorites list",
+            "Fan-made, full-rules simulator for the Grand Archive TCG: build decks, play online against other people or practice against a bot.",
         },
         {
           title: "BB84 Simulator",
