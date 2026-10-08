@@ -30,7 +30,7 @@ export const translations = {
     about: {
       title: "Sobre Mim",
       description:
-        "Sou desenvolvedor de software com experiência em sistemas internos e aplicações web. Atuo principalmente com backend, utilizando TypeScript, NestJS, Express e React, além de trabalhar com Java, C#, .NET e SQL Server. Já participei do desenvolvimento e manutenção de sistemas corporativos, sempre com foco em organização de código, estabilidade e soluções práticas. Possuo experiência em monitoramento e observabilidade com Zabbix e Grafana. Atualmente, estou em processo de estudo e aprofundamento em Machine Learning.",
+        "Sou desenvolvedor de software com experiência em sistemas internos e aplicações web. Atuo principalmente com backend, utilizando TypeScript, NestJS, Express e React, além de trabalhar com Java, C#, .NET e SQL Server. Já participei do desenvolvimento e manutenção de sistemas corporativos, sempre com foco em organização de código, estabilidade e soluções práticas. Possuo experiência em monitoramento e observabilidade com Zabbix e Grafana. Atualmente, sou desenvolvedor na SEMIT (Prefeitura de Salvador), trabalhando com Django e Laravel, e realizo iniciação científica no SENAI CIMATEC comparando modelos de Machine Learning na classificação de logs para cibersegurança.",
 
       frontend: "Frontend",
       backend: "Backend",
@@ -47,9 +47,21 @@ export const translations = {
       experienceItems: [
         {
           title:
-            "Desenvolvedor – TLD Hub de Cibersegurança e Conectividade (2025 - Atual)",
+            "Desenvolvedor – SEMIT, Secretaria Municipal de Inovação e Tecnologia de Salvador (Set. 2026 - Atual)",
           description:
-            "Atuação no desenvolvimento de sistemas internos utilizando TypeScript, Express, NestJS e React, além da implementação de soluções de monitoramento e observabilidade com Zabbix e Grafana.",
+            "Desenvolvimento e manutenção de sistemas da Prefeitura de Salvador utilizando Django (Python) e Laravel (PHP).",
+        },
+        {
+          title:
+            "Iniciação Científica em Machine Learning e Cibersegurança – SENAI CIMATEC (Jun. 2026 - Atual)",
+          description:
+            "Pesquisa comparando diferentes modelos de Machine Learning na classificação de logs, aplicada à detecção de eventos de segurança.",
+        },
+        {
+          title:
+            "Desenvolvedor – TLD Hub de Cibersegurança e Conectividade (2025 - Ago. 2026)",
+          description:
+            "Atuei no desenvolvimento de sistemas internos utilizando TypeScript, Express, NestJS e React, além da implementação de soluções de monitoramento e observabilidade com Zabbix e Grafana.",
         },
         {
           title:
@@ -171,7 +183,7 @@ export const translations = {
     about: {
       title: "About Me",
       description:
-        "I'm a software developer with experience in internal systems and web applications, primarily focused on backend development using TypeScript, NestJS, Express, and React, with additional experience in Java, C#, .NET, and SQL Server. I've contributed to the development and maintenance of corporate systems with an emphasis on clean code, stability, and practical solutions. I also have experience in system monitoring and observability using Zabbix and Grafana. Between 2024 and 2025, I worked on applied research in quantum computing at SENAI CIMATEC, focusing on the BB84 protocol for Quantum Key Distribution (QKD). Currently, I am studying and deepening my knowledge in Machine Learning.",
+        "I'm a software developer with experience in internal systems and web applications, primarily focused on backend development using TypeScript, NestJS, Express, and React, with additional experience in Java, C#, .NET, and SQL Server. I've contributed to the development and maintenance of corporate systems with an emphasis on clean code, stability, and practical solutions. I also have experience in system monitoring and observability using Zabbix and Grafana. Between 2024 and 2025, I worked on applied research in quantum computing at SENAI CIMATEC, focusing on the BB84 protocol for Quantum Key Distribution (QKD). Currently, I work as a developer at SEMIT (Salvador City Hall) with Django and Laravel, and conduct undergraduate research at SENAI CIMATEC comparing Machine Learning models for log classification in cybersecurity.",
 
       frontend: "Frontend",
       backend: "Backend",
@@ -188,7 +200,19 @@ export const translations = {
       experienceItems: [
         {
           title:
-            "Software Developer – TLD Cybersecurity and Connectivity Hub (2025 - Present)",
+            "Software Developer – SEMIT, Salvador Municipal Secretariat of Innovation and Technology (Sep 2026 - Present)",
+          description:
+            "Development and maintenance of Salvador City Hall systems using Django (Python) and Laravel (PHP).",
+        },
+        {
+          title:
+            "Undergraduate Research in Machine Learning and Cybersecurity – SENAI CIMATEC (Jun 2026 - Present)",
+          description:
+            "Research comparing different Machine Learning models for log classification, applied to the detection of security events.",
+        },
+        {
+          title:
+            "Software Developer – TLD Cybersecurity and Connectivity Hub (2025 - Aug 2026)",
           description:
             "Worked on internal systems using TypeScript, Express, NestJS, and React, as well as implementing monitoring and observability solutions with Zabbix and Grafana.",
         },

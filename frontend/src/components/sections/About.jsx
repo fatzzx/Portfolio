@@ -6,12 +6,13 @@ import { Section, Logo } from "../Section";
 import { BlurFade } from "../magicui/BlurFade";
 import tldLogo from "../../assets/img/logos/tld.png";
 import pgeLogo from "../../assets/img/logos/pge.png";
+import semitLogo from "../../assets/img/logos/semit.png";
 import cimatecLogo from "../../assets/img/logos/cimatec.png";
 import vieiraLogo from "../../assets/img/logos/antonio-vieira.png";
 import { ChevronRight, Database, Activity } from "lucide-react";
 import {
   SiTypescript, SiNestjs, SiExpress, SiPython, SiDotnet, SiOpenjdk,
-  SiReact, SiTailwindcss, SiJavascript, SiGrafana,
+  SiReact, SiTailwindcss, SiJavascript, SiGrafana, SiDjango, SiLaravel,
 } from "react-icons/si";
 
 const skills = [
@@ -19,6 +20,8 @@ const skills = [
   { name: "NestJS", icon: SiNestjs },
   { name: "Express", icon: SiExpress },
   { name: "Python", icon: SiPython },
+  { name: "Django", icon: SiDjango },
+  { name: "Laravel", icon: SiLaravel },
   { name: ".NET", icon: SiDotnet },
   { name: "SQL Server", icon: Database },
   { name: "Java", icon: SiOpenjdk },
@@ -29,6 +32,8 @@ const skills = [
   { name: "Grafana", icon: SiGrafana },
 ];
 const jobLogos = [
+  { src: semitLogo, fit: "contain" },
+  { src: cimatecLogo, fit: "zoom" },
   { src: tldLogo, fit: "cover" },
   { src: pgeLogo, fit: "emblem" },
   { src: cimatecLogo, fit: "zoom" },
