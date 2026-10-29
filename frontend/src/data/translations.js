@@ -83,6 +83,11 @@ export const translations = {
       intro: "Projetos pessoais e de pesquisa, de simuladores de criptografia quântica a plataformas web.",
       items: [
         {
+          title: "GTS Labs",
+          description:
+            "Site da minha empresa: engenharia de software sob demanda e uma linha de produtos prontos para empresas que precisam de resultado rápido.",
+        },
+        {
           title: "AVSYS",
           description:
             "Sistema distribuído de reserva de passagens aéreas pensado para alta concorrência: lock distribuído e filas de mensagens impedem a reserva duplicada do mesmo assento.",
@@ -235,6 +240,11 @@ export const translations = {
       title: "Check out my latest work",
       intro: "Personal and research projects, from quantum cryptography simulators to web platforms.",
       items: [
+        {
+          title: "GTS Labs",
+          description:
+            "My company's website: on-demand software engineering and a line of ready-made products for businesses that need fast results.",
+        },
         {
           title: "AVSYS",
           description:

@@ -9,11 +9,12 @@ import fabdleShot from "../../assets/img/project-fabdle.jpg";
 
 // Same order as projects.items in translations.js.
 const projectsData = [
+  { link: "https://gtstech.business", tags: ["Next.js", "TypeScript", "Software sob medida"], art: "gts" },
   { link: "https://github.com/fatzzx/avsys", tags: ["Bun", "ElysiaJS", "Redis", "RabbitMQ", "NGINX", "Docker"], art: "services" },
   { link: "https://cheguei.gtstech.business", tags: ["Bun", "Elysia", "Postgres", "Next.js", "WhatsApp"], image: chegueiShot },
   { link: "https://fabdle-three.vercel.app", tags: ["TypeScript", "Vite"], image: fabdleShot },
   { link: "https://archivum.fzx.lat/", tags: ["TypeScript", "React", "Vite", "Multiplayer"], image: archivumShot },
-  { link: "https://github.com/fatzzx/BB84-simulator", tags: ["TypeScript", "BB84", "QKD"], art: "basis" },
+  { link: "https://bb-84-simulator.vercel.app/", tags: ["TypeScript", "BB84", "QKD"], art: "basis" },
 ];
 
 const ArtFrame = ({ children }) => (
@@ -52,6 +53,15 @@ const ServicesArt = () => (
   </ArtFrame>
 );
 
+// GTS Labs is a company site: show its wordmark.
+const GtsArt = () => (
+  <ArtFrame>
+    <span className="text-3xl font-semibold tracking-tight select-none">
+      gts<span className="text-emerald-400">.labs</span>
+    </span>
+  </ArtFrame>
+);
+
 export const Projects = () => {
   const { t } = useTranslation();
   const projects = t("projects.items");
@@ -84,6 +94,8 @@ export const Projects = () => {
                       <img src={d.image} alt="" className="w-full h-48 object-cover object-top" />
                     ) : d.art === "services" ? (
                       <ServicesArt />
+                    ) : d.art === "gts" ? (
+                      <GtsArt />
                     ) : (
                       <BasisArt />
                     )}
